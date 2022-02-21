@@ -1,0 +1,112 @@
+<main class="contenido">
+  <div><h3 style="text-align: center;">Modificar producto</h3></div>
+  <form
+    class="nuevo-prod"
+    action="/admin/productos/modificar"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <br />
+    <div class="row">
+      <div class="col-sm-10">
+        <input
+          type="hidden"
+          class="form-control form-control-lg"
+          id="colFormLabelLg"
+          value="{{product.id_producto}}"
+          name="id_producto"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <label
+        for="colFormLabelLg"
+        class="col-sm-2 col-form-label col-form-label-lg"
+      >Marca</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          id="colFormLabelLg"
+          value="{{product.marca}}"
+          name="marca"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <label
+        for="colFormLabelLg"
+        class="col-sm-2 col-form-label col-form-label-lg"
+      >Modelo</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          id="colFormLabelLg"
+          value="{{product.modelo}}"
+          name="modelo"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <label
+        for="colFormLabelLg"
+        class="col-sm-2 col-form-label col-form-label-lg"
+      >Descripcion</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          id="colFormLabelLg"
+          value="{{product.descripcion}}"
+          name="descripcion"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <label
+        for="colFormLabelLg"
+        class="col-sm-2 col-form-label col-form-label-lg"
+      >Imagen</label>
+      <div class="col-sm-10">
+        <input
+          type="file"
+          class="form-control form-control-lg"
+          id="colFormLabelLg imagen"
+          name="imagen"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-10">
+        <label style="width: 80%; margin-left: 1%">
+          <input
+            type="checkbox"
+            id="colFormLabelLg imagen_delete"
+            name="imagen_delete"
+            value="1"
+          />
+          Eliminar imagen imagen actual
+        </label>
+        <input
+          type="hidden"
+          id="colFormLabelLg"
+          name="img_original"
+          value="{{productos.img_id}}"
+        />
+      </div>
+    </div>
+    <br />
+    <input type="submit" value="Guardar" />
+    <br /><br />
+    {{#if error}}
+      <p class="error">{{message}}</p>
+    {{/if}}
+  </form>
+
+</main>
